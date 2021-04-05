@@ -6,16 +6,16 @@ module.exports = function() {
     async function create() {
 
     }
-    async function delete(){
+    async function eliminar() {
 
     }
-    async function update(){
-        
+    async function update() {
+
     }
     return {
         listall,
         create,
-        delete,
+        eliminar,
         update
     }
 }

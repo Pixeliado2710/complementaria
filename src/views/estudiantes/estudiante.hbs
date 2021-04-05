@@ -1,0 +1,115 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <form action="creare" method="POST">
+                       
+                    <div class="label">Nombre</div>
+                    <input class="form-control" name="nombre_estu" id="">
+                    
+                    <div class="label">edad</div>
+                    <input class="form-control" name="edad" id="">
+
+                    <div class="label">correo</div>
+                    <input class="form-control"  name="correo" id="" placeholder="name@example.com">
+
+                    
+                    <div class="label">grado</div>
+                    <input class="form-control" name="grado" id="">
+                    </label>
+                    <br>
+                    <button type="submit" class="btn btn-success btn" >Enviar</button>
+                    
+                       
+                </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">estudiante</th>
+                            <th scope="col">edad</th>
+                            <th scope="col">correo</th>
+                            <th scope="col">grado</th>
+                            </tr>
+                            
+                        </thead>
+                    <tbody>
+                        {{#each listarestu}}
+                        <tr>
+                        <th scope="row">{{id_estudiantes}}</th>
+                        <td>{{nombre_estu}}</td>
+                        <td>{{edad}}</td>
+                        <td>{{correo}}</td>
+                        <td>{{grado}}</td>
+                        <td><!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaestudiantes{{id_estudiantes}}">
+                    eliminar
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="eliminaestudiantes{{id_estudiantes}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Eliminar registro</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            quiere eliminar {{nombre_estu}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <a class="btn btn-danger" href="eliminare/{{id_estudiantes}}">eliminar</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{id_estudiantes}}">
+  modificar
+</button>
+
+<!-- Modal -->
+ 
+<div class="modal fade" id="exampleModal{{id_estudiantes}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="modificare/{{id_estudiantes}}" method="POST">  
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                    
+                    
+                       
+                    <div class="label">Nombre</div>
+                    <input class="form-control" value="{{nombre_estu}}" name="nombre_estu" id="">
+                    
+                    <div class="label">edad</div>
+                    <input class="form-control" value="{{edad}}" name="edad" id="">
+
+                    <div class="label">correo</div>
+                    <input class="form-control" value="{{correo}}" name="correo" id="" placeholder="name@example.com">
+
+                    
+                    <div class="label">grado</div>
+                    <input class="form-control" value="{{grado}}" name="grado" id="">
+                    </label>
+                    <br>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info">Modificar</button>
+                    </div>
+                    </div>
+                </div>
+                    </form>
+                </div>
+                        </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>    
+                    </table>

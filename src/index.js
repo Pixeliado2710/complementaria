@@ -41,8 +41,8 @@ app.use('/v3', require('./routes/parcial/v3s'));
 app.use('/v4', require('./routes/parcial/v4s'));
 app.use('/v1', require('./routes/electiva/4semestre'));
 app.use('/estudiantes', require('./routes/electiva/4semestre'));
-app.use('/materias',require('./routes/electiva/4semestre'));
-app.use('/clases',require('./routes/electiva/4semestre'));
+app.use('/materias', require('./routes/electiva/4semestre'));
+app.use('/clases', require('./routes/electiva/4semestre'));
 
 
 //app.use('/productos', require('./routes/productos'));

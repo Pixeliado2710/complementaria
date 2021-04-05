@@ -1,3 +1,4 @@
+const pool = require('../database')
 module.exports = function() {
     async function listall() {
 
@@ -7,10 +8,10 @@ module.exports = function() {
 
     }
 
-    async function eliminar(){
+    async function eliminar() {
 
     }
-    async function update(){
+    async function update() {
 
     }
     return {
